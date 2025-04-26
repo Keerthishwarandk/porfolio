@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-panel">
+        <span class="menu-toggle" onclick="toggleSidebar()">☰</span>
+        <h3>Portfolio</h3>
+    </header>
+
+    <div class="container">
+        <nav class="side-panel" id="sidebar">
+            <a class="side-panel-a" onclick="rendercontent('main-panel','home',this);" href="#home">Home</a>
+            <a class="side-panel-a" onclick="rendercontent('main-panel','about',this);" href="#about">About Me</a>
+            <a class="side-panel-a" onclick="rendercontent('main-panel','experience',this);" href="#experience">Experience</a>
+            <a class="side-panel-a" onclick="rendercontent('main-panel','skillset',this);" href="#skills">Skill Set</a>
+            <a class="side-panel-a" onclick="rendercontent('main-panel','projects',this);" href="#projects">Projects</a>
+            <a class="side-panel-a" onclick="rendercontent('main-panel','contact',this);" href="#contact">Contact</a>
+        </nav>
+
+        <main  id="main-panel" class="main-panel">
+            <section id="home">
+
+            <div class="home-content">
+                <div class="title-card">
+                    <div class="name"><h2>Hi, I'm Keerthish</h2></div>
+                    <div class="des">A passionate Full Stack Develop</div>
+                    <a class="button-86"  href="#projects" class="btn">View My Work</a>
+                </div>
+                <div class="img-container">
+                    <img src="imagekeerthi.jpeg" alt="user-img">
+                </div>
+            </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+           var home = ` <section id="home">
+            <div class="home-content">
+                <div class="title-card">
+                    <div class="name"><h2>Hi, I'm Keerthish</h2></div>
+                    <div class="des">A passionate Full Stack Develop</div>
+                    <a class="button-86"  href="#projects" class="btn">View My Work</a>
+                </div>
+                <div class="img-container">
+                    <img src="imagekeerthi.jpeg" alt="user-img">
+                </div>
+            </div>
+            </section>`;
+    var about = `<section id="about" class="about-section">
+                <div class="about-container">
+                    <div class="about-header">
+                    <h2>👨‍💻 About Me</h2>
+                    <p>I’m a passionate full stack developer who loves building scalable web applications and learning new technologies.</p>
+                    </div>
+
+                    <div class="about-grid">
+                    <div class="about-left">
+                        <h3>Personal Info</h3>
+                        <ul>
+                        <li><strong>Name:</strong> Durai Keerthishwaran</li>
+                        <li><strong>Location:</strong> Chennai, Tamil Nadu 601204</li>
+                        <li><strong>Phone:</strong> 7708403384</li>
+                        <li><strong>Email:</strong> <a href="mailto:keerthishwaran964@outlook.com">keerthishwaran964@outlook.com</a></li>
+                        <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/keerthish-waran-7878b3273" target="_blank">View Profile</a></li>
+                        <li><strong>GitHub:</strong> <a href="https://github.com/Keerthishwarandk" target="_blank">Keerthishwarandk</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="about-right">
+                        <h3>Summary</h3>
+                        <p>
+                        I’m a dynamic Full Stack Developer with <strong>3 years of experience</strong>, passionate about cloud architecture and building powerful backend and frontend systems. Started as a web designer, evolved into developing complete frameworks and scalable apps.
+                        </p>
+                        <p>
+                        Strong in Agile workflows, and experienced in leading teams, designing low-code tools, and shipping robust monthly builds.
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                </section>
+
+                `;
+            var projects = `<section id="projects" class="projects-section">
+                <div class="projects-container">
+                    <h2>🛠️ Projects</h2>
+
+                    <div class="project-card">
+                    <div class="project-header">
+                        <h3>School Management System</h3>
+                        <span>Spring Boot | MySQL | JDBC</span>
+                    </div>
+                    <p>
+                        A Java-based web application to streamline and manage school operations, including student data, staff records, fees, and class schedules.
+                    </p>
+                    <p><strong>Technologies Used:</strong> Spring Boot, JDBC, MySQL, Maven, Tomcat</p>
+                    </div>
+
+                    <div class="project-card">
+                    <div class="project-header">
+                        <h3>Hostel Management System</h3>
+                        <span>HTML | CSS | JavaScript | JSON</span>
+                    </div>
+                    <p>
+                        A web-based system for hostel room allotment, student record keeping, and PDF generation for applications.
+                    </p>
+                    <p><strong>Features:</strong> Student login, room booking, admin dashboard, and printable summaries.</p>
+                    </div>
+
+                    <div class="project-card">
+                    <div class="project-header">
+                        <h3>Quiz Web Application</h3>
+                        <span>HTML | CSS | JS | JSON</span>
+                    </div>
+                    <p>
+                        An interactive quiz platform with login, timed quizzes, scoring, and admin control to manage users and questions.
+                    </p>
+                    <p><strong>Highlights:</strong> JSON database, auto scoring, user management, and modular question loader.</p>
+                    </div>
+
+                </div>
+                </section>`;
+           var contact= `<section id="contact">
+  <h2>📬 Contact Me</h2>
+  <p>Feel free to reach out for collaborations or just a chat!</p>
+  <p>Email: <a href="mailto:keerthishwaran964@outlook.com">keerthishwaran964@outlook.com</a></p>
+  <p>Phone:7708403384</p>
+  <p>GitHub: <a href="https://github.com/Keerthishwarandk" target="_blank">Keerthishwarandk</a></p>
+  <p>LinkedIn: <a href="https://linkedin.com/in/keerthish-waran-7878b3273" target="_blank">keerthish-waran-7878b3273</a></p>
+</section>
+
+`;
+
+
+var experience = `<section id="experience" class="experience-section">
+            <div class="experience-container">
+                <h2>💼 Experience</h2>
+
+                <div class="experience-card">
+                <div class="exp-header">
+                    <h3>Spot Future Technology India, Bangalore</h3>
+                    <span>June 2022 – Sep 2024</span>
+                </div>
+                <p><strong>Role:</strong> Product Tech Lead | Full Stack Developer</p>
+                <ul>
+                    <li>Led Business Flow product feature enhancements using Agile methodology.</li>
+                    <li>Developed a low-code framework for rapid web app development.</li>
+                    <li>Acted as Scrum Master, managing grooming calls and monthly releases.</li>
+                </ul>
+                </div>
+
+                <div class="experience-card">
+                <div class="exp-header">
+                    <h3>Citi ICG Technology (Forage Virtual Internship)</h3>
+                    <span>December 2024</span>
+                </div>
+                <p><strong>Role:</strong> Software Development Simulation</p>
+                <ul>
+                    <li>Built Java tools to visualize stock market risk in real-time.</li>
+                    <li>Created UML diagrams for loan management processes.</li>
+                    <li>Explored ML models for credit risk and suggested implementations.</li>
+                </ul>
+                </div>
+
+            </div>
+            </section>`;
+
+            var skillset =`<section id="skills" class="skills-section">
+  <div class="skills-container">
+    <h2>🧠 Skill Set</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <h3>☕ Java</h3>
+        <ul>
+          <li>Core Java</li>
+          <li>JDBC</li>
+          <li>Spring Boot</li>
+          <li>Maven</li>
+          <li>JSP</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>🐍 Python</h3>
+        <ul>
+          <li>Flask</li>
+          <li>Tkinter</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>🌐 JavaScript</h3>
+        <ul>
+          <li>React</li>
+          <li>React Native</li>
+          <li>Node.js</li>
+          <li>Express.js</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>☁️ Cloud & DevOps</h3>
+        <ul>
+          <li>AWS EC2, S3, RDS</li>
+          <li>Jenkins (CI/CD)</li>
+          <li>Apache Airflow</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+`;
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("open");
+        }
+
+        function rendercontent(target,content,parm) {
+            document.getElementById(target).innerHTML=eval(content);
+
+            let allSideLinks = document.querySelectorAll(".side-panel-a");
+
+            // First remove border from all links
+            allSideLinks.forEach(function(link) {
+                link.style.borderLeft = "none";
+            });
+
+            // Then add border to the clicked one
+            parm.style.borderLeft = "5px solid #007BFF";
+
+        }
+
+
+    </script>
+
+</body>
+</html>
